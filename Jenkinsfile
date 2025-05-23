@@ -1,8 +1,8 @@
 pipeline {
     agent { label 'AGENT-1' }
     environment { 
-        PROJECT = 'EXPENSE'
-        COMPONENT = 'BACKEND' 
+        PROJECT = 'expense'
+        COMPONENT = 'backend' 
         appVersion = ''
         ACC_ID = '490004637572'
     }
@@ -47,7 +47,6 @@ pipeline {
                         docker build -t ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${project}/${component}:${appVersion} .
 
                         docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${project}/${component}:${appVersion}
-
                         """
 
                     }
