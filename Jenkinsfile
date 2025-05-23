@@ -36,6 +36,15 @@ pipeline {
                 }
             }
         }
+        stage('Docker Build'){
+            steps{
+                script{
+                    sh """
+                        docker build -t backend-cicd:v1.0.0 .
+                    """
+                }
+            }
+        }
         
         
     }
